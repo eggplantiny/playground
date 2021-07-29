@@ -3,6 +3,7 @@
     "build": "tsc"
   },
   "dependencies": {
+    "jimp": "^0.16.1",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
