@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "ts-node"
   },
   "dependencies": {
     "jimp": "^0.16.1",

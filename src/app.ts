@@ -1,4 +1,10 @@
-import { choiceRandomItems, preprocessImage, preprocessThumbnail, saveJson, chunking } from './dataRefine'
+import {
+  choiceRandomItems,
+  preprocessImage,
+  preprocessThumbnail,
+  saveJson,
+  chunking
+} from './dataRefine'
 
 async function run () {
   const itemList = await choiceRandomItems()
@@ -13,8 +19,9 @@ async function run () {
     console.time('timer')
 
     await Promise.all([
-      ...chuck.map(item => preprocessImage(item.path, './data/choose/images', item.fileName, 800)),
-      ...chuck.map(item => preprocessThumbnail(item.path, './data/choose/thumbnails', `thumbnail_${item.fileName}`, 300))
+      ...chuck.map(item => preprocessImage(item.path, './data/choose/images', item.fileName, 900)),
+      ...chuck.map(item => preprocessImage(item.path, './data/choose/low_images', item.fileName, 250)),
+      ...chuck.map(item => preprocessThumbnail(item.path, './data/choose/thumbnails', `thumbnail_${item.fileName}`, 250))
     ])
     
     console.timeEnd('timer')
